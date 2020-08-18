@@ -1,6 +1,8 @@
 package com.rohitpawarrrr.rohitpawar;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.widget.Toast;
@@ -16,18 +18,20 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class Activity_displayContents extends AppCompatActivity {
     ArrayList <Model> models = new ArrayList<>(  );
+    private ModelAdapter modelAdapter;
+    private RecyclerView recyclerView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate( savedInstanceState );
         setContentView( R.layout.activity_display_contents );
-
         setTitle( "The Display - Rohit Pawar" ); //Title of an activity.
 
+        recyclerView = (RecyclerView)findViewById( R.id.recyclerView ) ;
+        recyclerView.setLayoutManager( new LinearLayoutManager(this) );
+
         getResponse();
-
-
-
     }
 
     public void getResponse() {
@@ -43,6 +47,8 @@ public class Activity_displayContents extends AppCompatActivity {
              @Override
              public void onResponse(Call<List<Model>> call, Response<List<Model>> response) {
                  models = new ArrayList<>( response.body() );
+                 modelAdapter = new ModelAdapter( Activity_displayContents.this, models);
+                 recyclerView.setAdapter( modelAdapter );
                  Toast.makeText(getApplicationContext(),"Success",Toast.LENGTH_SHORT).show();
              }
 
