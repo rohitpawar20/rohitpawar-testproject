@@ -11,6 +11,10 @@ public class Activity_displayContents extends AppCompatActivity {
         super.onCreate( savedInstanceState );
         setContentView( R.layout.activity_display_contents );
 
+        setTitle( "The Display - Rohit Pawar" ); //Title of an activity.
+
+
+
 
     }
 }
