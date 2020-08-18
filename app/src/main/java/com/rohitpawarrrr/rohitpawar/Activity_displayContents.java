@@ -36,7 +36,7 @@ public class Activity_displayContents extends AppCompatActivity {
 
     public void getResponse() {
          Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl( "https://picsum.photos/v2/" )
+                .baseUrl( "https://rohitpawar20.github.io/" )
                  .addConverterFactory( GsonConverterFactory.create() )
                  .build();
 

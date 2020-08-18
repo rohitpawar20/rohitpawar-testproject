@@ -10,6 +10,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.squareup.picasso.Picasso;
+
 import java.util.ArrayList;
 
 public class ModelAdapter extends RecyclerView.Adapter<ModelAdapter.ViewHolder> {
@@ -32,12 +34,12 @@ public class ModelAdapter extends RecyclerView.Adapter<ModelAdapter.ViewHolder> 
 
     @Override
     public void onBindViewHolder(@NonNull ModelAdapter.ViewHolder viewHolder, int i) {
-        viewHolder.textView_title.setText( models.get( i ).getId() );
-        viewHolder.textView_desc.setText( models.get( i ).getAuthor() );
 
+        viewHolder.textView_title.setText( models.get(i).getName() );
+        viewHolder.textView_desc.setText( models.get(i).getDesc());
 
-
-    }
+        Picasso.get().load( models.get( i ).getImage()).into( viewHolder.imageView );
+   }
 
     @Override
     public int getItemCount() {

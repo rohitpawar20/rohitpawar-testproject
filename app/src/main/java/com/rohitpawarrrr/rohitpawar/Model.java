@@ -8,21 +8,15 @@ public class Model {
     @SerializedName("id")
     @Expose
     private String id;
-    @SerializedName("author")
+    @SerializedName("name")
     @Expose
-    private String author;
-    @SerializedName("width")
+    private String name;
+    @SerializedName("desc")
     @Expose
-    private Integer width;
-    @SerializedName("height")
+    private String desc;
+    @SerializedName("image")
     @Expose
-    private Integer height;
-    @SerializedName("url")
-    @Expose
-    private String url;
-    @SerializedName("download_url")
-    @Expose
-    private String downloadUrl;
+    private String image;
 
     public String getId() {
         return id;
@@ -32,43 +26,27 @@ public class Model {
         this.id = id;
     }
 
-    public String getAuthor() {
-        return author;
+    public String getName() {
+        return name;
     }
 
-    public void setAuthor(String author) {
-        this.author = author;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public Integer getWidth() {
-        return width;
+    public String getDesc() {
+        return desc;
     }
 
-    public void setWidth(Integer width) {
-        this.width = width;
+    public void setDesc(String desc) {
+        this.desc = desc;
     }
 
-    public Integer getHeight() {
-        return height;
+    public String getImage() {
+        return image;
     }
 
-    public void setHeight(Integer height) {
-        this.height = height;
-    }
-
-    public String getUrl() {
-        return url;
-    }
-
-    public void setUrl(String url) {
-        this.url = url;
-    }
-
-    public String getDownloadUrl() {
-        return downloadUrl;
-    }
-
-    public void setDownloadUrl(String downloadUrl) {
-        this.downloadUrl = downloadUrl;
+    public void setImage(String image) {
+        this.image = image;
     }
 }

@@ -7,7 +7,7 @@ import retrofit2.http.GET;
 
 public interface RequestInterface {
 
-    @GET("list?page=2&limit=20")
+    @GET("file.json")
     Call<List<Model>> getJson();
 
 }
