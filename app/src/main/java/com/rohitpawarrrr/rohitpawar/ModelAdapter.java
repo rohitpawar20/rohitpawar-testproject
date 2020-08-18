@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -39,7 +40,7 @@ public class ModelAdapter extends RecyclerView.Adapter<ModelAdapter.ViewHolder> 
         viewHolder.textView_desc.setText( models.get(i).getDesc());
         Picasso.get().load( models.get( i ).getImage()).into( viewHolder.imageView );
 
-   }
+    }
 
     @Override
     public int getItemCount() {
@@ -56,7 +57,13 @@ public class ModelAdapter extends RecyclerView.Adapter<ModelAdapter.ViewHolder> 
             textView_desc = (TextView)itemView.findViewById( R.id.textView_desc );
             textView_title = (TextView)itemView.findViewById( R.id.textView_title );
 
-
+            //Displays the description text in toast message..
+            itemView.setOnClickListener( new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Toast.makeText( itemView.getContext(),textView_desc.getText().toString(),Toast.LENGTH_SHORT ).show();
+                }
+            } );
 
 
         }
