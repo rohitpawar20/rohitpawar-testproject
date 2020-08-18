@@ -2,24 +2,25 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:contentDescription="@string/imagee"
     android:orientation="vertical">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_margin="1dp"
+            android:orientation="vertical"
+            android:padding="4dp">
 
             <ImageView
                 android:id="@+id/imageView"
-                android:layout_width="100dp"
+                android:layout_width="300dp"
                 android:layout_height="100dp"
-                android:contentDescription="@string/imgg"
-                android:padding="5dp" />
+                android:contentDescription="@string/img" />
 
             <TextView
                 android:id="@+id/textView_title"

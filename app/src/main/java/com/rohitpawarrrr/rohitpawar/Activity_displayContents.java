@@ -49,12 +49,12 @@ public class Activity_displayContents extends AppCompatActivity {
                  models = new ArrayList<>( response.body() );
                  modelAdapter = new ModelAdapter( Activity_displayContents.this, models);
                  recyclerView.setAdapter( modelAdapter );
-                 Toast.makeText(getApplicationContext(),"Success",Toast.LENGTH_SHORT).show();
+                 Toast.makeText(getApplicationContext(),"Loading...",Toast.LENGTH_SHORT).show();
              }
 
              @Override
              public void onFailure(Call<List<Model>> call, Throwable t) {
-                 Toast.makeText( getApplicationContext(),"Failed",Toast.LENGTH_SHORT ).show();
+                 Toast.makeText( getApplicationContext(),"Failed to load data..",Toast.LENGTH_SHORT ).show();
 
              }
          } );

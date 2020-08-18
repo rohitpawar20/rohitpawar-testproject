@@ -37,8 +37,8 @@ public class ModelAdapter extends RecyclerView.Adapter<ModelAdapter.ViewHolder> 
 
         viewHolder.textView_title.setText( models.get(i).getName() );
         viewHolder.textView_desc.setText( models.get(i).getDesc());
-
         Picasso.get().load( models.get( i ).getImage()).into( viewHolder.imageView );
+
    }
 
     @Override
@@ -55,6 +55,8 @@ public class ModelAdapter extends RecyclerView.Adapter<ModelAdapter.ViewHolder> 
             imageView = (ImageView)itemView.findViewById( R.id.imageView );
             textView_desc = (TextView)itemView.findViewById( R.id.textView_desc );
             textView_title = (TextView)itemView.findViewById( R.id.textView_title );
+
+
 
 
         }
